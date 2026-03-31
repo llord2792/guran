@@ -5,6 +5,7 @@ workflows:
     environment:
       ios_signing:
         distribution_type: development
+        bundle_identifier: "io.gonative.RudakiCargo"
       vars:
         XCODE_WORKSPACE: "RudakiCargo.xcworkspace"
         XCODE_SCHEME: "RudakiCargo"
