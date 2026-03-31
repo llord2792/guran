@@ -1,0 +1,21 @@
+workflows:
+  ios-workflow:
+    name: iOS Build
+    max_build_duration: 60
+    environment:
+      ios_signing:
+        distribution_type: development
+      vars:
+        XCODE_WORKSPACE: "YourApp.xcworkspace"
+        XCODE_SCHEME: "YourApp"
+    scripts:
+      - name: Install dependencies
+        script: |
+          if [ -f "Podfile" ]; then
+            pod install
+          fi
+      - name: Build iOS app
+        script: |
+          xcodebuild build -workspace "$XCODE_WORKSPACE" -scheme "$XCODE_SCHEME" -sdk iphoneos -configuration Release CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+    artifacts:
+      - build/ios/ipa/*.ipa
