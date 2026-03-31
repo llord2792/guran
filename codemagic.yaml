@@ -6,8 +6,8 @@ workflows:
       ios_signing:
         distribution_type: development
       vars:
-        XCODE_WORKSPACE: "YourApp.xcworkspace"
-        XCODE_SCHEME: "YourApp"
+        XCODE_WORKSPACE: "RudakiCargo.xcworkspace"
+        XCODE_SCHEME: "RudakiCargo"
     scripts:
       - name: Install dependencies
         script: |
